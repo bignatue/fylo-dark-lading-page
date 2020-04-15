@@ -1,0 +1,476 @@
+/*
+Theme Name: F Dark
+Theme URI: https://bpbantigue.com/projects/fylo-dark/
+Author: Brian Bantigue
+Author URI: https://bpbantigue.com/
+Description: HTML CSS landing page code challenge
+Version: 1.0
+License: MIT
+License URI: https://bpbantigue.com/
+Text Domain: bpbantigue
+Tag: fylo dark, HTML CSS huddle theme
+*/
+
+/** fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap');
+
+:root { 
+  --white: hsl(0, 0%, 100%);
+  --dark-blue-intro: hsl(217, 28%, 15%);
+  --dark-blue-main: hsl(218, 28%, 13%);
+  --dark-blue-footer: hsl(216, 53%, 9%);
+  --dark-blue-testimonials: hsl(219, 30%, 18%);
+  --cyan-inside-ctag: hsl(176, 68%, 64%);
+  --blue-inside-ctag: hsl(198, 60%, 50%);
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {  
+    padding: 0;
+    margin: 0;
+    color: var(--white);
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: #b2b2b7;
+  }
+  
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  ul li a {
+    color: var(--white);
+  }
+  
+  img {
+    width: 100%;
+  }
+  
+  h1, h2, h3, h4, h5 {
+    font-family: 'Raleway', sans-serif;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.2rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+  
+.container {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.container-sm {
+  width: 800px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex > * {
+  flex: 1;
+}
+
+.center {
+  text-align: center;
+}
+.logo {
+  max-width: 200px;
+}
+
+.btn {
+  padding: 1rem 5rem;
+  border: none;
+  border-radius: 1.5rem;
+  background: linear-gradient(to right, #65e2d9 0%, #339ecc 100%);
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn:hover {
+  background: var(--blue-inside-ctag);
+}
+.btn-link {
+  color: var(--cyan-inside-ctag);
+  font-size: 1.2rem;
+  padding-bottom: .5rem ;
+  border-bottom: 1px solid;
+}
+
+/* header */
+header {
+  background-color: var(--dark-blue-intro);
+}
+nav {
+  padding: 3rem 0;
+}
+nav ul{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+nav ul li {
+  margin-left: 2rem;
+}
+header .features {
+  z-index: 2;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 70%;
+  margin-bottom: 5rem;
+  position: relative;
+}
+header .features img {
+  width: 80%;
+  margin: 0 auto 5rem;
+}
+header .feature-text {
+  margin: 2rem auto;
+  width: 80%;
+}
+header .features .btn {
+  margin: 2rem;
+}
+
+/** four-blocks **/
+.four-blocks {
+  padding: 5rem 0;
+  background-color: var(--dark-blue-main);
+  position: relative;
+}
+
+.four-blocks::before {
+  content: '';
+  background-image: url(images/bg-curvy-desktop.svg); 
+  background-repeat: no-repeat;
+  background-position: top left;
+  position: absolute;
+  background-size: contain;
+  height: 100%;
+  width: 100%;
+  top: -40%;
+}
+
+.four-blocks .flex {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.four-blocks .flex div{
+  padding: 0 5rem;
+}
+
+.four-blocks .flex img {
+  max-width: 100px;
+}
+
+/** two-column **/
+.two-column {
+  padding: 5rem 0;
+  background-color: var(--dark-blue-main);
+}
+.two-column .flex > div:nth-of-type(2) {
+  padding-left: 5rem;
+}
+.two-column .flex > div:nth-of-type(2) img {
+  max-width: 25px;
+  margin-bottom: -7px;
+}
+.two-column h2{
+  width: 50%;
+}
+
+/** cards **/
+.cards {
+  padding: 8rem 0 26rem;
+  background-color: var(--dark-blue-main);
+}
+.cards .flex {
+  justify-content: space-between;
+  position: relative;
+}
+.cards > .container > .flex::before {
+  content: '';
+  background-image: url(images/bg-quotes.png); 
+  background-repeat: no-repeat;
+  background-position: top left;
+  position: absolute;
+  background-size: contain;
+  height: 100%;
+  width: 60px;
+  top: -12%;
+  left: 15px;
+  z-index: 1;
+}
+.cards .flex .card {
+  margin: 0 2rem;
+  padding: 2rem;
+  z-index: 2;
+  border-radius: 1rem;
+  background-color: var(--dark-blue-testimonials);
+  box-shadow: 10px 10px 5px 0px rgb(32, 44, 65);
+} 
+.cards .profile {
+  margin-top: 2rem;
+}
+.cards .profile img {
+  max-width: 40px;
+  margin-right: 1rem;border-radius: 50%;
+}
+.cards .profile h5 {
+  margin: 0;
+  font-weight: 500;
+}
+.cards .profile small {
+  color: #b2b2b7;
+}
+
+/** subscribe **/
+.subscribe {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.subscribe > .container {
+  z-index: 2;
+  width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3rem 5rem;
+  border-radius: .5rem;
+  background-color: var(--dark-blue-intro);
+  box-shadow: 10px 10px 5px 0px rgb(15, 15, 39);
+  position: absolute;
+  top: -180px;
+}
+.subscribe p {
+  margin-bottom: 2.5rem;
+}
+.subscribe input {
+  flex: 1;
+  border-radius: 1.5rem;
+  padding: 1.1rem 1rem;
+  margin-left: 1rem;
+  border: 1px solid #fff;
+}
+.subscribe button {
+  flex: 0.5;
+  padding: 1rem 2rem;
+  margin-left: 1rem;
+  border-radius: 1.6rem;
+}
+
+/** footer **/
+footer {
+  padding: 20rem 0 5rem;
+  background-color: var(--dark-blue-footer);
+  text-align: left;
+}
+footer .logo {
+  margin-bottom: 2rem;
+}
+footer .container > .flex,
+footer .container > .flex > .flex {
+  justify-content: start;
+  align-items: flex-start;
+}
+footer > .container > .flex > div:nth-of-type(1) {
+  flex: 2;
+}
+footer > .container > .flex > div:nth-of-type(2) {
+  flex: 1.2;
+}
+footer > .container > .flex > div:nth-of-type(3),
+footer > .container > .flex > div:nth-of-type(4),
+footer > .container > .flex > div:nth-of-type(5) {
+  flex: 0.8;
+}
+
+footer > .container > .flex img{
+  width: 20px;
+  max-width: 1.5rem;
+  margin-right: 2rem;
+}
+footer .flex:nth-of-type(1) p{
+  padding-right: 1rem;
+  margin: 0;
+}
+footer .flex > div:nth-of-type(2)  {
+  flex: 2;
+  padding: 0 1rem;
+  justify-self: flex-start;
+  vertical-align: top;
+}
+footer li {
+  margin-bottom: 1rem;
+} 
+
+footer .social{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+footer .social li{
+  margin-left: 1rem;
+}
+footer .social i{
+  font-size: 2rem;
+}
+
+
+/** big screen **/
+@media screen and (min-width: 1441px) {
+  .container {
+    width: 1440px;
+  }
+  .four-blocks::before {
+    top: -60%;
+  }
+  header .feature-text {
+    margin: 5rem auto;
+    width: 80%;
+  }
+  header .feature-text p {
+    font-size: 1.8rem;
+  }
+}
+
+/** mobile **/
+@media screen and (max-width: 768px) { 
+  .container {
+    padding: 0 1rem;
+  }
+  .flex {
+    flex-direction: column;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 2.8rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  nav {
+    padding: 2rem 0 3rem;
+  }
+  nav .flex {
+    flex-direction: row;
+  }
+  nav ul li {
+    margin-left: 1rem;
+  }
+  .logo {
+    max-width: 120px;
+  }
+  header .features {
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+  header .features img {
+    margin: 0 auto;
+  }
+  .four-blocks {
+    padding: 5rem 0 0;
+  }
+  .four-blocks::before {
+    background-image: url(images/bg-curvy-mobile.svg);
+    top: -9%;
+  }
+  header .feature-text {
+    width: 100%;
+    margin: 0;
+  }
+  .four-blocks .flex {
+    margin-bottom: 0;
+  }
+  .four-blocks .flex div {
+    padding: 0;
+    margin-bottom: 5rem;
+  }
+  .two-column .flex > div:nth-of-type(2) {
+    padding-left: 0;
+  }
+  .two-column h2 {
+    width: 100%;
+    font-size: 1.6rem;
+  }
+  .cards {
+    padding: 5rem 0 15rem;
+  }
+  .cards > .container > .flex::before {
+    top: -3.5%;
+  }
+  .cards .flex .card {
+    margin-bottom: 3rem;
+  }
+  .subscribe > .container {
+    width: 90%;
+    padding: 2rem
+  }
+
+  .subscribe input,
+  .subscribe button {
+    flex: 1;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+  .subscribe form.flex > * {
+    width: 100%;
+  }
+  /** footer **/
+  footer {
+    padding: 20rem 1rem 5rem;
+  }
+  footer > .container > .flex > div:nth-of-type(1) {
+    flex-direction: row;
+    margin-bottom: 2rem;
+  }
+  footer > .container > .flex > div:nth-of-type(2) {
+    flex: 1;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+  footer .flex.footer-contact {
+    flex-direction: row;
+  }
+  footer > .container > .flex > div:nth-of-type(5) {
+    flex: 1;
+    width: 100%;
+    margin-top: 5rem;
+  }
+  footer .social {
+    justify-content: center;
+  }
+}
